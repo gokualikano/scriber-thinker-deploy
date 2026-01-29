@@ -1,0 +1,99 @@
+{
+  "H1_Decryptify": {
+    "niche": "disasters",
+    "competitors": [
+      "https://www.youtube.com/@wildweatherus/videos",
+      "https://www.youtube.com/@DisasterToday",
+      "https://www.youtube.com/@GeoSphereHQ/videos",
+      "https://www.youtube.com/@Hurricaner79/videos",
+      "https://www.youtube.com/@SevereWeatherWorld/videos",
+      "https://www.youtube.com/@GeoNature1/videos",
+      "https://www.youtube.com/@Nature_Damage",
+      "https://www.youtube.com/@extremeweather24h",
+      "https://www.youtube.com/@XtremeTV24/videos",
+      "https://www.youtube.com/@WeatherUnchained/videos",
+      "https://www.youtube.com/@RhodeIslandPTV/videos",
+      "https://www.youtube.com/@GEOLOGYINFO/videos",
+      "https://www.youtube.com/@TheEarthMaster/videos",
+      "https://www.youtube.com/@eyesonpalnature/videos",
+      "https://www.youtube.com/@StormHQ/videos",
+      "https://www.youtube.com/@EarthlineYT",
+      "https://www.youtube.com/@EarthAttackers/videos",
+      "https://www.youtube.com/@EruptionsNow/videos",
+      "https://www.youtube.com/@stormwatch",
+      "https://www.youtube.com/@StormVelocityUSA",
+      "https://www.youtube.com/@PlanetBreakdown10",
+      "https://www.youtube.com/@IntoTheLithosphere"
+    ]
+  },
+  "H2": {
+    "niche": "gun_rights",
+    "competitors": [
+      "https://www.youtube.com/@GunsLawAdvisornne/videos",
+      "https://www.youtube.com/@firearmslawadisorofficial",
+      "https://www.youtube.com/@GunsGadgets/videos",
+      "https://www.youtube.com/@WeaponalLawAdvisor/videos",
+      "https://www.youtube.com/@thepeopsarmory/videos",
+      "https://www.youtube.com/@thefirearmslegal/videos",
+      "https://www.youtube.com/@Gunslaw/videos",
+      "https://www.youtube.com/@hamptonlawfirm/videos",
+      "https://www.youtube.com/@AltorneyMarcLopez/videos",
+      "https://www.youtube.com/@TheFourBoxesDiner/videos",
+      "https://www.youtube.com/@GunOwnersofAmerica/videos",
+      "https://www.youtube.com/@CAGunLaw"
+    ]
+  },
+  "H3_AI_Decoded": {
+    "niche": "disasters_breaking_news",
+    "note": "Same niche as H1, combined competitors",
+    "competitors": [
+      "https://www.youtube.com/@QuakeScopeOfficial",
+      "https://www.youtube.com/@CAN-Moment38/videos",
+      "https://www.youtube.com/@wildweatherus/videos",
+      "https://www.youtube.com/@DisasterToday",
+      "https://www.youtube.com/@GeoSphereHQ/videos",
+      "https://www.youtube.com/@Hurricaner79/videos",
+      "https://www.youtube.com/@SevereWeatherWorld/videos",
+      "https://www.youtube.com/@GeoNature1/videos",
+      "https://www.youtube.com/@Nature_Damage",
+      "https://www.youtube.com/@extremeweather24h",
+      "https://www.youtube.com/@XtremeTV24/videos",
+      "https://www.youtube.com/@WeatherUnchained/videos",
+      "https://www.youtube.com/@RhodeIslandPTV/videos",
+      "https://www.youtube.com/@GEOLOGYINFO/videos",
+      "https://www.youtube.com/@TheEarthMaster/videos",
+      "https://www.youtube.com/@eyesonpalnature/videos",
+      "https://www.youtube.com/@StormHQ/videos",
+      "https://www.youtube.com/@EarthlineYT",
+      "https://www.youtube.com/@EarthAttackers/videos",
+      "https://www.youtube.com/@EruptionsNow/videos",
+      "https://www.youtube.com/@stormwatch",
+      "https://www.youtube.com/@StormVelocityUSA",
+      "https://www.youtube.com/@PlanetBreakdown10",
+      "https://www.youtube.com/@IntoTheLithosphere"
+    ]
+  },
+  "R1_JUST_HAPPENED": {
+    "niche": "news",
+    "competitors": [
+      "https://www.youtube.com/@Ispack69/videos",
+      "https://www.youtube.com/@Tavish87/videos",
+      "https://www.youtube.com/@ifxmatters2479/videos",
+      "https://www.youtube.com/@SwiftAINewsWorld/videos",
+      "https://www.youtube.com/@A-ListBuzz/videos",
+      "https://www.youtube.com/@swiftlyexplained13/videos",
+      "https://www.youtube.com/@hughenderson/videos"
+    ]
+  },
+  "R2_CAUGHT_NOW": {
+    "niche": "news_legal",
+    "competitors": [
+      "https://www.youtube.com/@afsports",
+      "https://www.youtube.com/@livenowfox/videos",
+      "https://www.youtube.com/@msnow/videos",
+      "https://www.youtube.com/@CourtTV",
+      "https://www.youtube.com/@CBSConfidential/videos",
+      "https://www.youtube.com/@ProfJoExplains"
+    ]
+  }
+}

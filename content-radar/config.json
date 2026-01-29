@@ -1,0 +1,56 @@
+{
+  "channels": {
+    "H1": {
+      "name": "Decryptify",
+      "niche": "disasters",
+      "alerts": ["usgs", "noaa", "severe_weather"],
+      "priority_keywords": ["earthquake", "tsunami", "hurricane", "tornado", "volcano", "flood", "wildfire"]
+    },
+    "H2": {
+      "name": "Locked & LAWFUL", 
+      "niche": "gun_rights",
+      "alerts": ["supreme_court", "congress", "atf"],
+      "priority_keywords": ["supreme court", "2nd amendment", "second amendment", "gun ban", "atf", "firearms", "constitutional carry"]
+    },
+    "H3": {
+      "name": "QUAKED",
+      "niche": "breaking_disasters",
+      "alerts": ["usgs", "noaa", "severe_weather"],
+      "priority_keywords": ["earthquake", "tsunami", "hurricane", "tornado", "breaking", "emergency"]
+    },
+    "R1": {
+      "name": "JUST HAPPENED",
+      "niche": "news",
+      "alerts": ["ap_news", "reuters"],
+      "priority_keywords": ["breaking", "just in", "developing"]
+    },
+    "R2": {
+      "name": "CAUGHT NOW",
+      "niche": "legal_news",
+      "alerts": ["court_news"],
+      "priority_keywords": ["verdict", "sentenced", "arrested", "trial"]
+    }
+  },
+  "alert_sources": {
+    "usgs": {
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_hour.geojson",
+      "check_interval_minutes": 5,
+      "min_magnitude": 5.5
+    },
+    "noaa": {
+      "url": "https://api.weather.gov/alerts/active",
+      "check_interval_minutes": 10,
+      "severity": ["Extreme", "Severe"]
+    },
+    "supreme_court": {
+      "url": "https://www.supremecourt.gov/rss/cases/JSON/opinions.json",
+      "check_interval_minutes": 30
+    }
+  },
+  "competitor_check_interval_minutes": 60,
+  "trending_threshold_views_per_hour": 5000,
+  "notification": {
+    "whatsapp": true,
+    "priority_alert_sound": true
+  }
+}

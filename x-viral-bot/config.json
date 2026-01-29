@@ -1,0 +1,10 @@
+{
+  "handle": "@MAlikanoHassan",
+  "dailyLimit": 5,
+  "niche": ["controversial", "politics", "feuds", "trending"],
+  "targetAudience": "USA",
+  "sleepHoursPKT": [3, 4, 5],
+  "peakHoursPKT": [6, 7, 10, 19, 20, 21, 22, 23],
+  "approvalTimeoutMinutes": 30,
+  "toneStrategy": "adaptive"
+}
