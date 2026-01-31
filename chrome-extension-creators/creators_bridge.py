@@ -176,14 +176,25 @@ class CreatorsBridgeHandler(BaseHTTPRequestHandler):
         # Reduce log noise
         pass
 
+def check_app_running_standalone():
+    """Check if Creators Video Automation app is running"""
+    try:
+        result = subprocess.run([
+            'osascript', '-e', 
+            'tell application "System Events" to return (name of processes) contains "Creators Video Automation"'
+        ], capture_output=True, text=True, timeout=5)
+        
+        return 'true' in result.stdout.lower()
+    except:
+        return False
+
 def main():
     print("🌉 Creators Video Automation - Bridge Service")
     print("🔗 Connects Chrome Extension → .dmg Desktop App")
     print("=" * 50)
     
     # Check if desktop app is running
-    handler = CreatorsBridgeHandler(None, None, None)
-    app_running = handler.check_app_running()
+    app_running = check_app_running_standalone()
     
     if app_running:
         print("✅ Creators Video Automation app detected!")
