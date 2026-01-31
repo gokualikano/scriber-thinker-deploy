@@ -122,10 +122,18 @@ def get_thumbnail():
     
     # Get video info
     try:
-        cmd = ["yt-dlp", "--dump-json", "--skip-download", url]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        cmd = [
+            "yt-dlp", 
+            "--dump-json", 
+            "--skip-download",
+            "--no-check-certificate",
+            "--user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+            url
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=45)
         if result.returncode != 0:
-            return jsonify({"error": "Failed to fetch video info"}), 400
+            print(f"yt-dlp error: {result.stderr}")
+            return jsonify({"error": f"Failed to fetch video info: {result.stderr[:200]}"}), 400
         
         info = json.loads(result.stdout)
         
