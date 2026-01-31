@@ -236,6 +236,9 @@ DESCRIPTION GUIDELINES:
 - NEVER include external links, donation links, or buymeacoffee links
 - NEVER include URLs to websites or services not owned by the channel
 - NO affiliate links, sponsor links, or third-party promotion links
+- NEVER claim the channel is operated by professionals, experts, scientists, geologists, meteorologists, etc.
+- DO NOT invent credentials, qualifications, or professional backgrounds
+- Keep channel identity generic - no fake expertise claims
 
 YOUTUBE-SAFE LANGUAGE (CRITICAL):
 Avoid these words that trigger demonetization:
@@ -250,6 +253,10 @@ DISCLAIMER GUIDELINES:
 - Professional, covers fair use if using news footage
 - Mentions educational/informational purpose
 - Brief copyright notice
+- NEVER claim fake credentials (no "professional geologist", "expert", "scientist", etc.)
+- NEVER make up who operates the channel or their qualifications
+- Keep generic - don't invent professional backgrounds or expertise claims
+- Stick to basic fair use, educational purpose, and copyright disclaimers only
 - 2-3 sentences
 
 TAGS GUIDELINES (SEO OPTIMIZED):
@@ -329,8 +336,8 @@ Transcript (first 3000 chars):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def clean_unwanted_links(text):
-    """Remove unwanted external links from generated content"""
+def clean_unwanted_content(text):
+    """Remove unwanted external links and fake credentials from generated content"""
     if not text:
         return text
     
@@ -349,7 +356,21 @@ def clean_unwanted_links(text):
     for pattern in unwanted_patterns:
         text = re.sub(pattern, '', text, flags=re.IGNORECASE)
     
-    # Clean up multiple newlines/spaces left by removed links
+    # Remove fake credential claims
+    fake_credential_patterns = [
+        r'This channel is operated by a professional [^.]*\.',
+        r'[^.]*professional geologist[^.]*\.',
+        r'[^.]*certified expert[^.]*\.',
+        r'[^.]*licensed professional[^.]*\.',
+        r'[^.]*qualified scientist[^.]*\.',
+        r'[^.]*meteorologist[^.]*providing[^.]*\.',
+        r'[^.]*expert analysis[^.]*\.'
+    ]
+    
+    for pattern in fake_credential_patterns:
+        text = re.sub(pattern, '', text, flags=re.IGNORECASE)
+    
+    # Clean up multiple newlines/spaces left by removed content
     text = re.sub(r'\n\s*\n\s*\n', '\n\n', text)
     text = re.sub(r'  +', ' ', text)
     
@@ -366,12 +387,12 @@ def parse_seo_response(text):
     # Parse description
     desc_match = re.search(r'SEO Description:\*?\*?\n(.*?)(?=\n---|\n\*\*⚠️|\Z)', text, re.DOTALL | re.IGNORECASE)
     if desc_match:
-        result["seo_description"] = clean_unwanted_links(desc_match.group(1).strip())
+        result["seo_description"] = clean_unwanted_content(desc_match.group(1).strip())
     
     # Parse disclaimer
     disc_match = re.search(r'Disclaimer:\*?\*?\n(.*?)(?=\n---|\n\*\*🏷️|\Z)', text, re.DOTALL | re.IGNORECASE)
     if disc_match:
-        result["disclaimer"] = clean_unwanted_links(disc_match.group(1).strip())
+        result["disclaimer"] = clean_unwanted_content(disc_match.group(1).strip())
     
     # Parse tags
     tags_match = re.search(r'Tags:\*?\*?\n(.*?)(?=\n---|\Z)', text, re.DOTALL | re.IGNORECASE)
