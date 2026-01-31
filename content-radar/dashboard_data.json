@@ -1,0 +1,542 @@
+{
+  "lastUpdated": "2026-01-29T13:26:43.428318",
+  "cards": [
+    {
+      "id": "514e8952",
+      "title": "\ud83c\udf0b M5.2 Earthquake - Galapagos Triple Junction region",
+      "type": "news",
+      "source": "USGS",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000s53p",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:43.428312",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "earthquake",
+        "disaster"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "29bef353",
+      "title": "\ud83c\udf0b M5 Earthquake - 33 km WSW of Sangay, Philippines",
+      "type": "news",
+      "source": "USGS",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000s543",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:43.427375",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "earthquake",
+        "disaster"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "2e794682",
+      "title": "\ud83c\udf0b M6 Earthquake - South Sandwich Islands region",
+      "type": "news",
+      "source": "USGS",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000s55s",
+      "priority": "high",
+      "createdAt": "2026-01-29T13:26:43.426368",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "earthquake",
+        "disaster"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "f2589529",
+      "title": "\u26a0\ufe0f Lake Effect Snow Warning - Northern Cayuga; Oswego",
+      "type": "news",
+      "source": "NOAA Weather",
+      "url": "https://www.weather.gov/alerts",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:42.954270",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "weather",
+        "extreme",
+        "disaster"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "ed48c1f6",
+      "title": "\u26a0\ufe0f Extreme Cold Watch - Okaloosa Coastal",
+      "type": "news",
+      "source": "NOAA Weather",
+      "url": "https://www.weather.gov/alerts",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:42.953336",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "weather",
+        "extreme",
+        "disaster"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "b9e1ff4c",
+      "title": "\u26a0\ufe0f Extreme Cold Watch - Choctaw; Washington; Clarke; Wilcox; Monroe; Conecuh; Butler",
+      "type": "news",
+      "source": "NOAA Weather",
+      "url": "https://www.weather.gov/alerts",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:42.952211",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "weather",
+        "extreme",
+        "disaster"
+      ],
+      "status": "new",
+      "demotedAt": "2026-01-29T13:26:43.424830"
+    },
+    {
+      "id": "59057051",
+      "title": "Footage of Drake Maye and Wife Draws Comparisons to Travis Kelce, Taylor Swift",
+      "type": "news",
+      "source": "US Weekly",
+      "url": "https://www.usmagazine.com/entertainment/news/footage-of-drake-maye-and-wife-draws-comparisons-to-travis-kelce-taylor-swift/",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:39.557690",
+      "views": null,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": null,
+      "summary": null,
+      "tags": [
+        "taylor-swift",
+        "celebrity"
+      ],
+      "status": "new",
+      "demotedAt": "2026-01-29T13:26:42.950787"
+    },
+    {
+      "id": "1f345c2b",
+      "title": "LIVE: NJ v. Paul Caneiro - Day 11 | Mansion Murders Trial",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=dxuvl4nR4og",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:35.712654",
+      "views": 0,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "0d79350c",
+      "title": "LIVE: VA v. Brendan Banfield - Day 9 | Au Pair Affair Murder Trial",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=Ij5_YJC8O1s",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:35.712393",
+      "views": 0,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "a9b0339d",
+      "title": "Melanie McGuire's Lover & Former Boss Testifies | Court TV Archive [PART 2]",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=tIC_a86q1Z0",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:35.712086",
+      "views": 0,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "ae40467f",
+      "title": "What Caneiro Family Body Locations Reveal | Vinnie Politan Investigates",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=sBWtwd8Yu14",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:35.711422",
+      "views": 4853,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "fbe7f1ac",
+      "title": "'Trump set that tone': Growing outrage over deadly MN immigration operation",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=LnMDU3VvgVo",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:33.583046",
+      "views": 10681,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "ec009447",
+      "title": "Buttigieg to Democrats: Picture life after Trump; Republicans already are",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=kpGniX9Hi4s",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:33.582377",
+      "views": 24851,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "4b00743e",
+      "title": "TOP MOMENTS: Powell on interest rates, employment, prices, tariffs, markets",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=qjArWuhVvEA",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:32.446144",
+      "views": 1852,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "3208f492",
+      "title": "BREAKING: Car slams into Chabad Lubavitch HQ in Brooklyn, police say",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=We4aJsCVTVQ",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:32.445574",
+      "views": 9136,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r2"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "7aa2efc5",
+      "title": "Emotional Kylie Kelce Opens Up About Travis & Taylor\u2019s Postponed Wedding!",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=pAHLTka0ViY",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:28.164471",
+      "views": 338,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "717c77a4",
+      "title": "Taylor Swift\u2019s EX Joe Alwyn Rumor Could Totally DESTROY Travis Kelce\u2019s Love Life!",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=uHYAPM0d__o",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:28.163837",
+      "views": 526,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "r1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "b9ce803b",
+      "title": "That Was Really Filmed on Camera #1",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=gY1mfF8lNDw",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:10.839595",
+      "views": 1185,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h3"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "2eff958c",
+      "title": "Idiots With Diesel Trucks: Ice Road Madness Caught On Camera | EXTREME Winter Driving Fails #16",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=j_qTQyA8OAk",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:10.838984",
+      "views": 3160,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h3"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "38397782",
+      "title": "Footage From Lake Oroville Reveals Aftermath Nobody Expected\u2014135% Full And Still Rising",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=SuuJK44Z9wA",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:09.656718",
+      "views": 12970,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h3"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "8b1f1365",
+      "title": "Footage From Naples Sea Shows Something Terrifying\u2014Water Bubbling At 94\u00b0C Above Supervolcano",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=-qXbFlJ7jBQ",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:09.656133",
+      "views": 13155,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h3"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "513dbc6d",
+      "title": "Chaos in Indonesia Today! Deadly Landslide Kills Residents, Homes Buried in Bandung",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=kNSnOB3P-5c",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:08.476719",
+      "views": 44,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "da019a56",
+      "title": "Chaos in Japan Again! Epic Winter Storm Buries Streets, Homes, Cars & Airports",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=Wl7ZwrFzXUc",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:08.476143",
+      "views": 47,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "c07e81cb",
+      "title": "BREAKING: Mayon Volcano VIOLENTLY Awakens - What Comes Next?",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=nZ3FNgdoO2I",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:04.125679",
+      "views": 14922,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "f8339df8",
+      "title": "BREAKING: California Lake Oroville SURGES 23 Feet \u2014 Scientists Explain",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=3dRYIvoAkDc",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:04.125123",
+      "views": 4831,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "b5fc55e0",
+      "title": "Record Snowfall in Toronto, Canada! Ontario Buried Under Snow Due to Severe Winter Storm",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=Psd5_OhkO14",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:02.975645",
+      "views": 217227,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new"
+    },
+    {
+      "id": "be6cae12",
+      "title": "Spain Hit by Kristin Storm! Winds of 130 km/h, Huge Waves and Flooding in Andalusia",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=pZvJhBIP-Fo",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:02.975418",
+      "views": 23531,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new",
+      "demotedAt": "2026-01-29T13:26:39.557025"
+    },
+    {
+      "id": "e7262f89",
+      "title": "Ice Apocalypse in USA! Trees Down, Homes and Cars Crushed by Ice Storm in Tennessee & Mississippi",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=k8NG3B1Ba90",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:01.704221",
+      "views": 262100,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new",
+      "demotedAt": "2026-01-29T13:26:02.974916"
+    },
+    {
+      "id": "e3650c3e",
+      "title": "Canada Hit by RECORD Snowfall! Toronto Buried Under Meters of Snow, Roads Paralyzed in Ontario",
+      "type": "video",
+      "source": "Unknown",
+      "url": "https://www.youtube.com/watch?v=L8cif3BweJg",
+      "priority": "medium",
+      "createdAt": "2026-01-29T13:26:01.703412",
+      "views": 65409,
+      "subscribers": null,
+      "postedAt": null,
+      "channel": "Unknown",
+      "summary": null,
+      "tags": [
+        "h1"
+      ],
+      "status": "new",
+      "demotedAt": "2026-01-29T13:26:01.704025"
+    }
+  ]
+}

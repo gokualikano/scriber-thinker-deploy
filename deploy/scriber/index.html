@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✍️ Scriber - YouTube SEO Optimizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        h1 span {
+            color: #10b981;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 1rem;
+        }
+        
+        .input-section {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .input-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .input-group {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: #2a2a2a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #34d399;
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary:disabled {
+            background: #065f46;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: #333;
+            color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            background: #444;
+        }
+        
+        .btn-copy {
+            background: #2563eb;
+            color: white;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-copy:hover {
+            background: #3b82f6;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .thumbnail-preview {
+            width: 100%;
+            border-radius: 8px;
+            background: #2a2a2a;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        
+        .video-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .video-info p {
+            margin-bottom: 5px;
+            color: #888;
+        }
+        
+        .video-info strong {
+            color: #fff;
+        }
+        
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .output-section {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .output-section h3 {
+            margin-bottom: 15px;
+            color: #10b981;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .output-content {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 15px;
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .output-actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .tag {
+            background: #333;
+            color: #e0e0e0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .status {
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .status-success {
+            background: #064e3b;
+            color: #34d399;
+        }
+        
+        .status-error {
+            background: #7f1d1d;
+            color: #fca5a5;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: #888;
+        }
+        
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid #333;
+            border-top-color: #10b981;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 15px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .history-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background: #2a2a2a;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .history-item:hover {
+            background: #333;
+        }
+        
+        .history-thumb {
+            width: 80px;
+            height: 45px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        
+        .history-title {
+            flex: 1;
+            font-size: 0.85rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .info-box {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        
+        .info-box label {
+            color: #10b981;
+            margin-bottom: 5px;
+        }
+        
+        .info-box p {
+            color: #888;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        
+        .copy-success {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            animation: fadeInOut 2s ease-in-out;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✍️ <span>Scriber</span></h1>
+            <p class="subtitle">YouTube SEO Optimizer - Description, Disclaimer & Tags</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-row">
+                <div class="input-group" style="flex: 2;">
+                    <label>YouTube URL</label>
+                    <input type="text" id="youtubeUrl" placeholder="https://www.youtube.com/watch?v=...">
+                </div>
+                <div class="input-group" style="flex: 0; display: flex; align-items: flex-end;">
+                    <button class="btn btn-primary" onclick="analyzeAndGenerate()" id="generateBtn">✍️ Generate SEO</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Extra Instructions (optional)</label>
+                <textarea id="extraInstructions" placeholder="e.g., focus on specific keywords, mention location, target specific audience..."></textarea>
+            </div>
+        </div>
+        
+        <div id="statusMessage" class="status hidden"></div>
+        
+        <div class="main-grid">
+            <div class="sidebar">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">📹 Video</span>
+                    </div>
+                    <img id="thumbnailPreview" class="thumbnail-preview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect fill='%232a2a2a' width='16' height='9'/%3E%3Ctext x='8' y='5' text-anchor='middle' fill='%23666' font-size='1.5'%3ENo Video%3C/text%3E%3C/svg%3E">
+                    <div class="video-info">
+                        <p><strong id="videoTitle">-</strong></p>
+                        <p>Channel: <span id="videoChannel">-</span></p>
+                        <p>Duration: <span id="videoDuration">-</span></p>
+                        <p>Views: <span id="videoViews">-</span></p>
+                    </div>
+                    
+                    <div class="info-box" id="originalDescBox" style="display:none;">
+                        <label>Original Description</label>
+                        <p id="originalDesc"></p>
+                    </div>
+                    
+                    <div class="info-box" id="originalTagsBox" style="display:none;">
+                        <label>Original Tags</label>
+                        <p id="originalTags"></p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">📜 History</span>
+                    </div>
+                    <div id="historyList">
+                        <p style="color: #666; font-size: 0.9rem;">No history yet</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <div class="card" id="resultsCard" style="display:none;">
+                    <!-- SEO Description -->
+                    <div class="output-section">
+                        <h3>📝 SEO Description</h3>
+                        <div class="output-content" id="seoDescription">-</div>
+                        <div class="output-actions">
+                            <button class="btn btn-copy" onclick="copyText('seoDescription')">📋 Copy Description</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Disclaimer -->
+                    <div class="output-section" style="margin-top: 20px;">
+                        <h3>⚠️ Disclaimer</h3>
+                        <div class="output-content" id="disclaimer">-</div>
+                        <div class="output-actions">
+                            <button class="btn btn-copy" onclick="copyText('disclaimer')">📋 Copy Disclaimer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="output-section" style="margin-top: 20px;">
+                        <h3>🏷️ YouTube Tags</h3>
+                        <div class="tags-container" id="tagsContainer">-</div>
+                        <div class="output-actions">
+                            <button class="btn btn-copy" onclick="copyTags()">📋 Copy All Tags (for YT Studio)</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" id="placeholderCard">
+                    <div style="text-align: center; padding: 60px 20px; color: #666;">
+                        <p style="font-size: 3rem; margin-bottom: 20px;">✍️</p>
+                        <p style="font-size: 1.1rem;">Enter a YouTube URL and click "Generate SEO"</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">I'll analyze the video and create optimized description, disclaimer, and tags</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentVideo = null;
+        let currentData = {
+            seo_description: '',
+            disclaimer: '',
+            tags: []
+        };
+        
+        async function analyzeAndGenerate() {
+            const url = document.getElementById('youtubeUrl').value.trim();
+            if (!url) {
+                showStatus('Please enter a YouTube URL', 'error');
+                return;
+            }
+            
+            const btn = document.getElementById('generateBtn');
+            btn.disabled = true;
+            
+            try {
+                // Step 1: Analyze video
+                btn.textContent = '⏳ Analyzing...';
+                showStatus('Fetching video info, transcript, tags...', 'success');
+                
+                const res1 = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+                
+                const videoData = await res1.json();
+                
+                if (videoData.error) {
+                    showStatus(videoData.error, 'error');
+                    return;
+                }
+                
+                currentVideo = videoData;
+                
+                // Update UI with video info
+                document.getElementById('thumbnailPreview').src = videoData.thumbnail_url;
+                document.getElementById('videoTitle').textContent = videoData.title;
+                document.getElementById('videoChannel').textContent = videoData.channel || '-';
+                document.getElementById('videoDuration').textContent = formatDuration(videoData.duration);
+                document.getElementById('videoViews').textContent = formatNumber(videoData.view_count);
+                
+                // Show original description and tags
+                if (videoData.description) {
+                    document.getElementById('originalDesc').textContent = videoData.description.substring(0, 500) + (videoData.description.length > 500 ? '...' : '');
+                    document.getElementById('originalDescBox').style.display = 'block';
+                }
+                
+                if (videoData.tags && videoData.tags.length > 0) {
+                    document.getElementById('originalTags').textContent = videoData.tags.join(', ');
+                    document.getElementById('originalTagsBox').style.display = 'block';
+                }
+                
+                // Step 2: Generate SEO content
+                btn.textContent = '⏳ Generating...';
+                showStatus('Generating SEO-optimized content... (takes 15-30 seconds)', 'success');
+                
+                const extra = document.getElementById('extraInstructions').value.trim();
+                
+                const res2 = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        title: videoData.title,
+                        description: videoData.description,
+                        tags: videoData.tags,
+                        transcript: videoData.transcript,
+                        extra_instructions: extra
+                    })
+                });
+                
+                const genData = await res2.json();
+                
+                if (genData.error) {
+                    showStatus('Error: ' + genData.error, 'error');
+                    return;
+                }
+                
+                currentData = {
+                    seo_description: genData.seo_description || '',
+                    disclaimer: genData.disclaimer || '',
+                    tags: genData.tags || []
+                };
+                
+                // Render results
+                document.getElementById('seoDescription').textContent = currentData.seo_description;
+                document.getElementById('disclaimer').textContent = currentData.disclaimer;
+                
+                // Render tags as pills
+                const tagsContainer = document.getElementById('tagsContainer');
+                if (currentData.tags.length > 0) {
+                    tagsContainer.innerHTML = currentData.tags.map(tag => 
+                        `<span class="tag">${escapeHtml(tag)}</span>`
+                    ).join('');
+                } else {
+                    tagsContainer.innerHTML = '<span style="color:#666">No tags generated</span>';
+                }
+                
+                // Show results card, hide placeholder
+                document.getElementById('resultsCard').style.display = 'block';
+                document.getElementById('placeholderCard').style.display = 'none';
+                
+                // Save to history
+                saveToHistory(videoData, currentData);
+                
+                showStatus(`✅ Generated SEO description, disclaimer, and ${currentData.tags.length} tags!`, 'success');
+                
+            } catch (e) {
+                showStatus('Failed: ' + e.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '✍️ Generate SEO';
+            }
+        }
+        
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                showCopySuccess();
+            });
+        }
+        
+        function copyTags() {
+            if (currentData.tags.length === 0) {
+                showStatus('No tags to copy', 'error');
+                return;
+            }
+            // Join with comma for YouTube Studio
+            const tagsText = currentData.tags.join(', ');
+            navigator.clipboard.writeText(tagsText).then(() => {
+                showCopySuccess();
+            });
+        }
+        
+        function showCopySuccess() {
+            const el = document.createElement('div');
+            el.className = 'copy-success';
+            el.textContent = '✓ Copied to clipboard!';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 2000);
+        }
+        
+        async function saveToHistory(video, data) {
+            await fetch('/api/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    video_id: video.video_id,
+                    title: video.title,
+                    thumbnail_url: video.thumbnail_url,
+                    ...data
+                })
+            });
+            loadHistory();
+        }
+        
+        async function loadHistory() {
+            try {
+                const res = await fetch('/api/history');
+                const history = await res.json();
+                
+                const container = document.getElementById('historyList');
+                if (history.length === 0) {
+                    container.innerHTML = '<p style="color: #666; font-size: 0.9rem;">No history yet</p>';
+                    return;
+                }
+                
+                container.innerHTML = history.slice(0, 10).map(item => `
+                    <div class="history-item" onclick="loadFromHistory('${item.video_id}')">
+                        <img class="history-thumb" src="${item.thumbnail_url}" onerror="this.style.display='none'">
+                        <span class="history-title">${escapeHtml(item.title || item.video_id)}</span>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        async function loadFromHistory(videoId) {
+            // Just set the URL and let user click generate
+            document.getElementById('youtubeUrl').value = `https://www.youtube.com/watch?v=${videoId}`;
+        }
+        
+        function showStatus(message, type) {
+            const el = document.getElementById('statusMessage');
+            el.textContent = message;
+            el.className = 'status status-' + type;
+            el.classList.remove('hidden');
+            setTimeout(() => el.classList.add('hidden'), 5000);
+        }
+        
+        function escapeHtml(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+        
+        function formatDuration(seconds) {
+            if (!seconds) return '-';
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        }
+        
+        function formatNumber(num) {
+            if (!num) return '-';
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num.toString();
+        }
+        
+        // Init
+        loadHistory();
+    </script>
+</body>
+</html>

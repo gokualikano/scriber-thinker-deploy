@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 280px;
+            padding: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        .header h3 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+        }
+        
+        .status {
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .online { background: #00c851; }
+        .offline { background: #ff4444; }
+        
+        .instructions {
+            font-size: 12px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        
+        .instructions ol {
+            margin: 8px 0;
+            padding-left: 16px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>📸 Copy to Premiere Pro</h3>
+        <div>Enhanced Edition</div>
+    </div>
+    
+    <div class status" id="status">
+        <span class="status-indicator offline" id="indicator"></span>
+        <span id="statusText">Checking bridge server...</span>
+    </div>
+    
+    <div class="instructions">
+        <strong>Quick Start:</strong>
+        <ol>
+            <li>Right-click any web image</li>
+            <li>Select "📸 Copy to Premiere Pro"</li>
+            <li>Switch to Premiere Pro</li>
+            <li>Press <strong>Cmd+V</strong> in timeline!</li>
+        </ol>
+    </div>
+    
+    <div class="footer">
+        v2.0 Enhanced • Local Bridge
+    </div>
+    
+    <script>
+        // Check bridge server status
+        async function checkStatus() {
+            try {
+                const response = await fetch('http://localhost:8589/status');
+                if (response.ok) {
+                    const status = await response.json();
+                    document.getElementById('indicator').className = 'status-indicator online';
+                    document.getElementById('statusText').textContent = status.premiere_active 
+                        ? '⚡ Bridge active, Premiere detected!'
+                        : '✅ Bridge active, ready to use';
+                } else {
+                    throw new Error('Server offline');
+                }
+            } catch (error) {
+                document.getElementById('indicator').className = 'status-indicator offline';
+                document.getElementById('statusText').textContent = '📁 Bridge offline (fallback mode)';
+            }
+        }
+        
+        // Check status when popup opens
+        checkStatus();
+        
+        // Refresh status every 2 seconds
+        setInterval(checkStatus, 2000);
+    </script>
+</body>
+</html>

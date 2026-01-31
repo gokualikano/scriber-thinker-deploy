@@ -1,0 +1,140 @@
+🧠 Thinker Server starting on http://localhost:8585
+ * Serving Flask app 'server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8585
+ * Running on http://192.168.100.193:8585
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-172-934
+127.0.0.1 - - [29/Jan/2026 20:08:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:08:24] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:08:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [29/Jan/2026 20:08:44] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [29/Jan/2026 20:08:45] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:08:56] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:14] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:14] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:14] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:13:48] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:14:05] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:14:06] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:14:06] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:15:53] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:16:13] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:16:13] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:16:14] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:18:54] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:19:12] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:19:13] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:19:13] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:22:10] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:22:30] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:22:30] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:22:31] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:23:35] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:23:55] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:23:56] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:23:56] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:30:07] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:30:07] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:30:08] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:40:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:40:50] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:40:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [29/Jan/2026 20:45:53] "[31m[1mPOST /api/thumbnail HTTP/1.1[0m" 400 -
+127.0.0.1 - - [29/Jan/2026 20:46:13] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:46:29] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:46:30] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:46:30] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 21:34:11] "GET /api/history HTTP/1.1" 200 -
+ * Detected change in '/Users/malikano/clawd/thinker/server.py', reloading
+🧠 Thinker Server starting on http://localhost:8585
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-172-934
+127.0.0.1 - - [30/Jan/2026 05:24:15] "[35m[1mGET / HTTP/1.1[0m" 206 -
+127.0.0.1 - - [30/Jan/2026 05:24:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [30/Jan/2026 05:24:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 05:24:23] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 05:24:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [30/Jan/2026 05:24:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 05:52:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 06:56:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 06:59:27] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [30/Jan/2026 06:59:27] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 16:33:50] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [30/Jan/2026 16:33:51] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 17:54:25] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 17:54:44] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 17:54:44] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 17:54:45] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:05:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:05:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [30/Jan/2026 19:05:22] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:06:53] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:06:53] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:06:54] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:09:58] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:10:15] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:10:15] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:10:16] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:11:43] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:12:02] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:12:03] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:12:03] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:13:52] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:14:11] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:14:12] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:14:12] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:16:39] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:17:00] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:17:01] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:17:01] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:18:20] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:18:39] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:18:40] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:18:40] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:19:02] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:19:02] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:19:03] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:42:12] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:42:12] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:42:13] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:57:03] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:57:21] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:57:22] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 19:57:23] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:03:33] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:03:51] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:03:52] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:03:53] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:13:04] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:13:23] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:13:24] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:13:25] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:15:07] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:15:08] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:15:09] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:18:18] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:18:37] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:18:38] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:18:38] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:20:35] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:20:55] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:20:55] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 20:20:56] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:38:02] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [31/Jan/2026 01:38:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:38:03] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:48:02] "POST /api/thumbnail HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:48:22] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:48:23] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:48:23] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 21:01:18] "[31m[1mFOO / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [31/Jan/2026 21:01:18] "[31m[1mFOO / HTTP/1.1[0m" 405 -
+ * Detected change in '/Users/malikano/clawd/thinker/server.py', reloading
+🧠 Thinker Server starting on http://localhost:8585
+ * Restarting with stat

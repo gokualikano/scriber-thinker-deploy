@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Copy to Premiere Pro Enhanced",
+  "version": "2.0",
+  "description": "Right-click images → Cmd+V paste directly in Premiere Pro timeline!",
+  
+  "permissions": [
+    "contextMenus",
+    "activeTab", 
+    "downloads",
+    "notifications"
+  ],
+  
+  "host_permissions": [
+    "*://*/*",
+    "http://localhost:8589/*"
+  ],
+  
+  "background": {
+    "service_worker": "background-enhanced.js"
+  },
+  
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content-enhanced.js"]
+  }],
+  
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png", 
+    "128": "icon128.png"
+  },
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Copy to Premiere Pro Enhanced",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}

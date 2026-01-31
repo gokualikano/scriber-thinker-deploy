@@ -1,0 +1,71 @@
+✍️ Scriber Server starting on http://localhost:8586
+ * Serving Flask app 'server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8586
+ * Running on http://192.168.100.193:8586
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 517-915-785
+127.0.0.1 - - [29/Jan/2026 20:09:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [29/Jan/2026 20:09:02] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:18] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:33] "POST /api/generate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:34] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:09:34] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:17:26] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [29/Jan/2026 20:17:27] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:36:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:36:30] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:36:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 20:36:31] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 22:21:58] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [29/Jan/2026 22:21:58] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 22:22:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 22:22:20] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 22:32:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 22:32:06] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 22:32:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [29/Jan/2026 22:43:18] "[31m[1mPOST /api/analyze HTTP/1.1[0m" 400 -
+127.0.0.1 - - [29/Jan/2026 22:43:32] "[31m[1mPOST /api/analyze HTTP/1.1[0m" 400 -
+127.0.0.1 - - [29/Jan/2026 23:16:03] "[31m[1mPOST /api/analyze HTTP/1.1[0m" 400 -
+127.0.0.1 - - [29/Jan/2026 23:18:08] "[31m[1mPOST /api/analyze HTTP/1.1[0m" 400 -
+127.0.0.1 - - [29/Jan/2026 23:23:51] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 23:23:53] "[35m[1mPOST /api/generate HTTP/1.1[0m" 500 -
+127.0.0.1 - - [29/Jan/2026 23:24:42] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 23:24:44] "[35m[1mPOST /api/generate HTTP/1.1[0m" 500 -
+127.0.0.1 - - [29/Jan/2026 23:24:59] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 23:24:59] "[35m[1mPOST /api/generate HTTP/1.1[0m" 500 -
+127.0.0.1 - - [29/Jan/2026 23:25:51] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 23:25:52] "[35m[1mPOST /api/generate HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Jan/2026 05:52:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 06:31:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 06:31:03] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 06:31:05] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [30/Jan/2026 06:31:06] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:38:00] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [31/Jan/2026 01:38:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 01:38:01] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 02:06:45] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [31/Jan/2026 02:06:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 02:06:45] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2026 21:01:18] "[31m[1mFOO / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [31/Jan/2026 21:01:18] "[31m[1mFOO / HTTP/1.1[0m" 405 -
+ * Detected change in '/Users/malikano/clawd/scriber/server.py', reloading
+✍️ Scriber Server starting on http://localhost:8586
+ * Restarting with stat
+127.0.0.1 - - [01/Feb/2026 00:23:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 00:23:45] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 00:23:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [01/Feb/2026 00:23:52] "[35m[1mGET / HTTP/1.1[0m" 206 -
+127.0.0.1 - - [01/Feb/2026 00:23:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [01/Feb/2026 00:42:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 00:42:03] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 00:42:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [01/Feb/2026 00:43:57] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 00:43:58] "[35m[1mPOST /api/generate HTTP/1.1[0m" 500 -
+127.0.0.1 - - [01/Feb/2026 00:44:12] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 00:44:13] "[35m[1mPOST /api/generate HTTP/1.1[0m" 500 -

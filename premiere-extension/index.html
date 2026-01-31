@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PRGrabber</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>🎬 PRGrabber</h2>
+            <p>Paste image URLs to import directly</p>
+        </div>
+        
+        <div class="input-section">
+            <textarea id="imageUrl" placeholder="Paste image URL here..." rows="3"></textarea>
+            <button id="importBtn" class="import-btn">Import to Timeline</button>
+        </div>
+        
+        <div class="quick-section">
+            <h3>Quick Actions</h3>
+            <button id="clipboardBtn" class="action-btn">Import from Clipboard</button>
+            <button id="lastBtn" class="action-btn">Import Last Copied</button>
+        </div>
+        
+        <div class="status" id="status">
+            Ready to import images
+        </div>
+        
+        <div class="recent">
+            <h3>Recent Imports</h3>
+            <div id="recentList" class="recent-list">
+                <p class="no-recent">No recent imports</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/CSInterface.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

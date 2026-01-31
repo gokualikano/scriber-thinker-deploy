@@ -20,9 +20,9 @@
     },
     "R1": {
       "name": "JUST HAPPENED",
-      "niche": "news",
-      "alerts": ["ap_news", "reuters"],
-      "priority_keywords": ["breaking", "just in", "developing"]
+      "niche": "taylor_swift_celebrity",
+      "alerts": ["tmz", "people", "eonline", "usweekly"],
+      "priority_keywords": ["taylor swift", "travis kelce", "swifties", "eras tour", "taylor and travis", "taylor travis", "kelce swift", "chiefs", "nfl taylor", "taylor boyfriend", "swift relationship"]
     },
     "R2": {
       "name": "CAUGHT NOW",

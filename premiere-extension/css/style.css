@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.container {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+#imageUrl {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+#imageUrl::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+#imageUrl:focus {
+    outline: none;
+    border-color: #3498db;
+    background: rgba(255,255,255,0.15);
+}
+
+.import-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.import-btn:hover {
+    background: linear-gradient(45deg, #c0392b, #a93226);
+    transform: translateY(-1px);
+}
+
+.import-btn:active {
+    transform: translateY(0);
+}
+
+.quick-section {
+    margin-bottom: 20px;
+}
+
+.quick-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.status {
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.status.success {
+    background: rgba(39, 174, 96, 0.3);
+    border: 1px solid rgba(39, 174, 96, 0.5);
+}
+
+.status.error {
+    background: rgba(231, 76, 60, 0.3);
+    border: 1px solid rgba(231, 76, 60, 0.5);
+}
+
+.recent {
+    flex-grow: 1;
+}
+
+.recent h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.recent-list {
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 60px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.recent-item {
+    padding: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.recent-item:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.recent-item:last-child {
+    margin-bottom: 0;
+}
+
+.no-recent {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 13px;
+    padding: 20px;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading .import-btn::after {
+    content: " ...";
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: " ."; }
+    40% { content: " .."; }
+    60%, 100% { content: " ..."; }
+}

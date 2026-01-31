@@ -74,7 +74,8 @@
     ]
   },
   "R1_JUST_HAPPENED": {
-    "niche": "news",
+    "niche": "taylor_swift_celebrity",
+    "note": "Taylor Swift + Travis Kelce focus, plus people in her orbit",
     "competitors": [
       "https://www.youtube.com/@Ispack69/videos",
       "https://www.youtube.com/@Tavish87/videos",
@@ -82,7 +83,19 @@
       "https://www.youtube.com/@SwiftAINewsWorld/videos",
       "https://www.youtube.com/@A-ListBuzz/videos",
       "https://www.youtube.com/@swiftlyexplained13/videos",
-      "https://www.youtube.com/@hughenderson/videos"
+      "https://www.youtube.com/@hughenderson/videos",
+      "https://www.youtube.com/channel/UCVRm2Ho8cL3lvWDyp2ayuFw/videos",
+      "https://www.youtube.com/channel/UC49fDbizE8PNVqOBxtXMjgQ/videos",
+      "https://www.youtube.com/channel/UCjDsbbzHgTrGc4Ff26TJtsA/videos",
+      "https://www.youtube.com/channel/UCK7IIV6Q2junGSdYK3BmZMg/videos",
+      "https://www.youtube.com/channel/UCA3P7uF6XOdsmLnyJnxjIDw/videos",
+      "https://www.youtube.com/channel/UCdtXPiqI2cLorKaPrfpKc4g/videos",
+      "https://www.youtube.com/channel/UCVLARYwwNQII92CsnMj6eBg/videos",
+      "https://www.youtube.com/channel/UCNWsXxEbKkKXOYzw-SwaXoA/videos",
+      "https://www.youtube.com/channel/UCTnSNMuMY6QH67U5l7EpYAA/videos",
+      "https://www.youtube.com/channel/UC4Sy5MBh8yq_UeQQ5dQzaxA/videos",
+      "https://www.youtube.com/channel/UC4zzgRxHx8pL9C2cFiwbOVQ/videos",
+      "https://www.youtube.com/channel/UCxsB1k7eH6OaUzCsRGvkgSg/videos"
     ]
   },
   "R2_CAUGHT_NOW": {
