@@ -1,17 +1,29 @@
-// Background script for Paste to Creators extension
+// Background script for Creators Video Automation extension
 let desktopAppPort = 7898;  // Port for desktop app communication
 
 // Create context menu when extension loads
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('Paste to Creators extension installed');
+  console.log('Creators Video Automation extension installed');
   createContextMenu();
+  
+  // Show welcome notification
+  try {
+    chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'icon48.png',
+      title: 'Creators Video Automation',
+      message: 'Extension ready! Right-click YouTube videos to send to your app.'
+    });
+  } catch (error) {
+    console.log('Welcome notification failed:', error);
+  }
 });
 
 // Create context menu for YouTube videos
 function createContextMenu() {
   chrome.contextMenus.create({
     id: "paste-to-creators",
-    title: "📹 Paste to Creators",
+    title: "📹 Send to Creators",
     contexts: ["link", "page"],
     targetUrlPatterns: [
       "*://www.youtube.com/watch?v=*",
@@ -88,12 +100,18 @@ async function sendToDesktopApp(url) {
 
 // Show notification to user
 function showNotification(message) {
-  chrome.notifications.create({
-    type: 'basic',
-    iconUrl: 'icon48.png',
-    title: 'Paste to Creators',
-    message: message
-  });
+  try {
+    chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'icon48.png',
+      title: 'Creators Video Automation',
+      message: message
+    });
+  } catch (error) {
+    console.log('Notification failed:', error);
+    // Fallback: just log the message
+    console.log('NOTIFICATION:', message);
+  }
 }
 
 // Extract video title from URL (basic)
@@ -126,12 +144,4 @@ async function copyToClipboard(text) {
   }
 }
 
-// Add notification permission
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.notifications.create({
-    type: 'basic',
-    iconUrl: 'icon48.png',
-    title: 'Paste to Creators',
-    message: 'Extension ready! Right-click YouTube videos to send to your app.'
-  });
-});
+// Extension initialization complete
