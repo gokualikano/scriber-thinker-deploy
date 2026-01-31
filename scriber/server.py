@@ -233,6 +233,9 @@ DESCRIPTION GUIDELINES:
 - NO fabricated names, statements, or statistics
 - 100% factual - only describe what actually happened based on the transcript
 - News-style writing, no sensationalism
+- NEVER include external links, donation links, or buymeacoffee links
+- NEVER include URLs to websites or services not owned by the channel
+- NO affiliate links, sponsor links, or third-party promotion links
 
 YOUTUBE-SAFE LANGUAGE (CRITICAL):
 Avoid these words that trigger demonetization:
@@ -326,6 +329,32 @@ Transcript (first 3000 chars):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+def clean_unwanted_links(text):
+    """Remove unwanted external links from generated content"""
+    if not text:
+        return text
+    
+    # Remove buymeacoffee links
+    text = re.sub(r'https?://[^\s]*buymeacoffee[^\s]*', '', text, flags=re.IGNORECASE)
+    
+    # Remove other common donation/external links
+    unwanted_patterns = [
+        r'https?://[^\s]*patreon[^\s]*',
+        r'https?://[^\s]*paypal[^\s]*', 
+        r'https?://[^\s]*kofi[^\s]*',
+        r'https?://[^\s]*gofundme[^\s]*',
+        r'https?://[^\s]*drastrogeotech[^\s]*'
+    ]
+    
+    for pattern in unwanted_patterns:
+        text = re.sub(pattern, '', text, flags=re.IGNORECASE)
+    
+    # Clean up multiple newlines/spaces left by removed links
+    text = re.sub(r'\n\s*\n\s*\n', '\n\n', text)
+    text = re.sub(r'  +', ' ', text)
+    
+    return text.strip()
+
 def parse_seo_response(text):
     """Parse Claude's SEO response into structured data"""
     result = {
@@ -337,12 +366,12 @@ def parse_seo_response(text):
     # Parse description
     desc_match = re.search(r'SEO Description:\*?\*?\n(.*?)(?=\n---|\n\*\*⚠️|\Z)', text, re.DOTALL | re.IGNORECASE)
     if desc_match:
-        result["seo_description"] = desc_match.group(1).strip()
+        result["seo_description"] = clean_unwanted_links(desc_match.group(1).strip())
     
     # Parse disclaimer
     disc_match = re.search(r'Disclaimer:\*?\*?\n(.*?)(?=\n---|\n\*\*🏷️|\Z)', text, re.DOTALL | re.IGNORECASE)
     if disc_match:
-        result["disclaimer"] = disc_match.group(1).strip()
+        result["disclaimer"] = clean_unwanted_links(disc_match.group(1).strip())
     
     # Parse tags
     tags_match = re.search(r'Tags:\*?\*?\n(.*?)(?=\n---|\Z)', text, re.DOTALL | re.IGNORECASE)
