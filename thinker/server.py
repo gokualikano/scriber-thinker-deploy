@@ -16,8 +16,8 @@ import base64
 import httpx
 from pathlib import Path
 
-# Anthropic API - hardcoded for reliability
-ANTHROPIC_API_KEY = "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"
+# Anthropic API - Use environment variable for security
+ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'your-secret-key-change-me-in-production-thinker')
