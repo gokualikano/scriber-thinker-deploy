@@ -21,50 +21,53 @@ chrome.runtime.onInstalled.addListener(() => {
 
 // Create context menu for YouTube videos
 function createContextMenu() {
-  chrome.contextMenus.create({
-    id: "paste-to-creators",
-    title: "📹 Send to Creators",
-    contexts: ["link", "page"],
-    targetUrlPatterns: [
-      "*://www.youtube.com/watch?v=*",
-      "*://youtu.be/*",
-      "*://m.youtube.com/watch?v=*"
-    ]
-  });
-
-  // Also create menu for when right-clicking on YouTube pages
-  chrome.contextMenus.create({
-    id: "paste-current-video",
-    title: "📹 Send Current Video to Creators", 
-    contexts: ["page"],
-    documentUrlPatterns: [
-      "*://www.youtube.com/watch?v=*",
-      "*://youtu.be/*",
-      "*://m.youtube.com/watch?v=*"
-    ]
-  });
+  try {
+    // Clear existing menus first
+    chrome.contextMenus.removeAll(() => {
+      // Create simple menu for YouTube pages
+      chrome.contextMenus.create({
+        id: "send-to-creators",
+        title: "📹 Send to Creators",
+        contexts: ["page", "link"],
+        documentUrlPatterns: ["*://www.youtube.com/*", "*://youtu.be/*"]
+      });
+      
+      console.log('Context menu created successfully');
+    });
+  } catch (error) {
+    console.error('Failed to create context menu:', error);
+  }
 }
 
 // Handle context menu clicks
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   let videoUrl = '';
 
-  if (info.menuItemId === "paste-to-creators" && info.linkUrl) {
-    // Right-clicked on a YouTube link
-    videoUrl = info.linkUrl;
-  } else if (info.menuItemId === "paste-current-video" && info.pageUrl) {
-    // Right-clicked on current YouTube page
-    videoUrl = info.pageUrl;
+  if (info.menuItemId === "send-to-creators") {
+    // Get URL from either the link or the current page
+    videoUrl = info.linkUrl || info.pageUrl || tab.url;
   }
 
-  if (videoUrl) {
+  if (videoUrl && isYouTubeUrl(videoUrl)) {
     console.log('Sending video URL to desktop app:', videoUrl);
     sendToDesktopApp(videoUrl);
     
     // Show notification
-    showNotification(`Sent to Creators App: ${getVideoTitle(videoUrl)}`);
+    showNotification(`Sent to Creators: ${getVideoTitle(videoUrl)}`);
+  } else {
+    console.log('Not a valid YouTube URL:', videoUrl);
+    showNotification('❌ Not a valid YouTube video');
   }
 });
+
+// Check if URL is a YouTube video
+function isYouTubeUrl(url) {
+  return url && (
+    url.includes('youtube.com/watch') || 
+    url.includes('youtu.be/') ||
+    url.includes('m.youtube.com/watch')
+  );
+}
 
 // Send URL to desktop app via HTTP
 async function sendToDesktopApp(url) {
