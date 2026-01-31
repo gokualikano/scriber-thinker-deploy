@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Paste to Creators",
+  "name": "Creators Video Automation",
   "version": "1.0",
-  "description": "Right-click YouTube videos to send directly to Creators Video Automation app",
+  "description": "Right-click YouTube videos to send directly to Creators Video Automation desktop app",
   
   "permissions": [
     "contextMenus",
@@ -39,6 +39,6 @@
   
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Paste to Creators"
+    "default_title": "Creators Video Automation"
   }
 }
