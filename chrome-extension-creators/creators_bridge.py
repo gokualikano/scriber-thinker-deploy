@@ -141,8 +141,12 @@ class CreatorsBridgeHandler(BaseHTTPRequestHandler):
     def method_file_communication(self, url):
         """Method 2: Write URL to file that app might monitor"""
         try:
+            # Write to the app's actual urls.txt file
+            app_urls_file = Path("/Users/malikano/clawd/VideoAutomation/VideoAutomation/urls.txt")
+            
             # Create URLs file in app's expected locations
             possible_paths = [
+                app_urls_file,  # App's actual urls.txt file
                 Path.home() / "Desktop" / "creators_urls.txt",
                 Path("/tmp/creators_urls.txt"),
                 Path.home() / "Documents" / "creators_urls.txt"
@@ -150,12 +154,19 @@ class CreatorsBridgeHandler(BaseHTTPRequestHandler):
             
             for path in possible_paths:
                 try:
-                    # Append URL with timestamp
-                    with open(path, 'a') as f:
-                        f.write(f"{url}\n")
-                    print(f"✅ URL written to {path}")
+                    if str(path).endswith("VideoAutomation/urls.txt"):
+                        # For the app's main file, overwrite with single URL
+                        with open(path, 'w') as f:
+                            f.write(f"{url}\n")
+                        print(f"✅ URL written to app's urls.txt: {path}")
+                    else:
+                        # For other files, append with timestamp
+                        with open(path, 'a') as f:
+                            f.write(f"{url}\n")
+                        print(f"✅ URL written to {path}")
                     break
-                except:
+                except Exception as e:
+                    print(f"⚠️ Failed to write to {path}: {e}")
                     continue
             
             return True
