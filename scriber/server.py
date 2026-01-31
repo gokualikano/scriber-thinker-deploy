@@ -222,6 +222,8 @@ Your job is to analyze a video's transcript, current description, and tags, then
 2. A professional disclaimer
 3. Optimized YouTube tags
 
+CRITICAL: Create completely ORIGINAL content. Do not copy, reference, or include ANY links, phrases, or credits from the source video's description. Treat the source description as reference material only - never copy elements from it into your output.
+
 DESCRIPTION GUIDELINES:
 - Start with a compelling hook (first 150 chars show in search)
 - Include relevant keywords naturally
@@ -236,6 +238,9 @@ DESCRIPTION GUIDELINES:
 - NEVER include external links, donation links, or buymeacoffee links
 - NEVER include URLs to websites or services not owned by the channel
 - NO affiliate links, sponsor links, or third-party promotion links
+- IGNORE any links from the original video description - do not copy them over
+- DO NOT reference other channels, creators, or their donation links
+- Create completely fresh content - don't copy phrases or links from source material
 - NEVER claim the channel is operated by professionals, experts, scientists, geologists, meteorologists, etc.
 - DO NOT invent credentials, qualifications, or professional backgrounds
 - Keep channel identity generic - no fake expertise claims
@@ -356,18 +361,38 @@ def clean_unwanted_content(text):
     for pattern in unwanted_patterns:
         text = re.sub(pattern, '', text, flags=re.IGNORECASE)
     
-    # Remove fake credential claims
-    fake_credential_patterns = [
+    # Remove fake credential claims and source video references
+    unwanted_content_patterns = [
+        # Fake credentials
         r'This channel is operated by a professional [^.]*\.',
         r'[^.]*professional geologist[^.]*\.',
         r'[^.]*certified expert[^.]*\.',
         r'[^.]*licensed professional[^.]*\.',
         r'[^.]*qualified scientist[^.]*\.',
         r'[^.]*meteorologist[^.]*providing[^.]*\.',
-        r'[^.]*expert analysis[^.]*\.'
+        r'[^.]*expert analysis[^.]*\.',
+        
+        # References to original video/creator
+        r'Original video by[^.]*\.',
+        r'Credit to[^.]*\.',
+        r'Source:[^.]*\.',
+        r'Video courtesy of[^.]*\.',
+        r'Thanks to[^.]*for this footage\.',
+        r'Support the original creator[^.]*\.',
+        
+        # Generic donation language that might reference source
+        r'Support[^.]*coffee[^.]*\.',
+        r'Buy[^.]*coffee[^.]*\.',
+        r'Donate[^.]*[^.]*\.',
+        
+        # Remove specific domain references and creator promotion
+        r'Visit[^.]*\.com[^.]*\.',
+        r'Check out[^.]*\.com[^.]*\.',
+        r'Follow[^.]*\.com[^.]*\.',
+        r'Subscribe to[^.]*original[^.]*\.'
     ]
     
-    for pattern in fake_credential_patterns:
+    for pattern in unwanted_content_patterns:
         text = re.sub(pattern, '', text, flags=re.IGNORECASE)
     
     # Clean up multiple newlines/spaces left by removed content
