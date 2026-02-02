@@ -126,8 +126,13 @@ def analyze_video():
             "--skip-download",
             "--no-check-certificate",
             "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "--extractor-retries", "3",
-            "--sleep-interval", "1",
+            "--extractor-retries", "5",
+            "--fragment-retries", "5",
+            "--retry-sleep", "linear=2:5:1", 
+            "--sleep-interval", "2",
+            "--sleep-subtitles", "2",
+            "--add-header", "Accept-Language:en-US,en;q=0.9",
+            "--add-header", "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             url
         ]
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
@@ -152,12 +157,32 @@ def analyze_video():
             
             if fallback_result.returncode != 0:
                 print(f"yt-dlp fallback also failed: {fallback_result.stderr}")
-                return jsonify({"error": f"Failed to fetch video info after multiple attempts: {error_msg}"}), 400
+                print("Using manual basic info extraction for Scriber...")
+                
+                # Extract video ID for basic info
+                video_id_match = re.search(r'(?:v=|/v/|youtu\.be/)([a-zA-Z0-9_-]{11})', url)
+                if video_id_match:
+                    video_id = video_id_match.group(1)
+                    
+                    # Create minimal info object for processing
+                    info = {
+                        "id": video_id,
+                        "title": f"YouTube Video {video_id}",
+                        "description": "Video info extraction failed, using basic analysis mode.",
+                        "tags": [],
+                        "duration": None,
+                        "view_count": None
+                    }
+                    print("Using basic video info fallback")
+                else:
+                    return jsonify({"error": f"Failed to fetch video info after all attempts: {error_msg}"}), 400
             else:
                 result = fallback_result
                 print("Scriber fallback method succeeded")
-        
-        info = json.loads(result.stdout)
+                info = json.loads(result.stdout)
+        else:
+            # Primary method succeeded
+            info = json.loads(result.stdout)
         
         # Get transcript
         transcript = ""
@@ -168,24 +193,58 @@ def analyze_video():
                     "yt-dlp",
                     "--skip-download",
                     "--write-subs",
-                    "--write-auto-subs",
+                    "--write-auto-subs", 
                     "--sub-langs", "en.*,en",
                     "--sub-format", "vtt",
                     "--output", f"{tmpdir}/%(id)s",
                     "--no-check-certificate",
                     "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                    "--extractor-retries", "3",
-                    "--sleep-interval", "1",
+                    "--extractor-retries", "5",
+                    "--fragment-retries", "5",
+                    "--retry-sleep", "linear=2:5:1",
+                    "--sleep-interval", "2", 
+                    "--sleep-subtitles", "2",
+                    "--add-header", "Accept-Language:en-US,en;q=0.9",
+                    "--add-header", "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                     url
                 ]
-                subprocess.run(sub_cmd, capture_output=True, text=True, timeout=90)
+                result = subprocess.run(sub_cmd, capture_output=True, text=True, timeout=120)
+                
+                # If subtitle extraction fails, try with fallback method
+                if result.returncode != 0:
+                    print(f"Subtitle extraction failed, trying fallback method: {result.stderr}")
+                    
+                    fallback_sub_cmd = [
+                        "yt-dlp",
+                        "--skip-download",
+                        "--write-auto-subs",
+                        "--sub-langs", "en",
+                        "--sub-format", "vtt",
+                        "--output", f"{tmpdir}/%(id)s",
+                        "--no-check-certificate",
+                        "--user-agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+                        "--extractor-retries", "2",
+                        "--no-call-home",
+                        url
+                    ]
+                    subprocess.run(fallback_sub_cmd, capture_output=True, text=True, timeout=90)
                 
                 # Find and parse VTT file
                 vtt_files = list(Path(tmpdir).glob("*.vtt"))
                 if vtt_files:
-                    transcript = parse_vtt(vtt_files[0])
+                    try:
+                        transcript = parse_vtt(vtt_files[0])
+                        print(f"Transcript extracted successfully: {len(transcript)} characters")
+                    except Exception as parse_error:
+                        print(f"VTT parsing error: {parse_error}")
+                        transcript = "Transcript parsing failed, but video analysis can proceed."
+                else:
+                    print("No VTT files found, continuing without transcript")
+                    transcript = "No transcript available for this video."
+                    
         except Exception as e:
-            print(f"Transcript error: {e}")
+            print(f"Transcript extraction error: {e}")
+            transcript = "Transcript extraction failed, but video analysis can proceed."
         
         return jsonify({
             "video_id": video_id,
