@@ -331,15 +331,58 @@ Your job is to analyze a competitor's YouTube thumbnail and generate:
 2. Video titles (80-100 characters)
 3. Thumbnail captions (3-5 words)
 
-IMAGEFX PROMPT STYLE (CRITICAL):
-- Similar scene but DIFFERENT PERSPECTIVE (rotate: ground level from car, aerial/drone, dashcam, overpass looking down, roadside POV, crowd watching, fishing boat, rooftop, hotel balcony, CCTV angle, inside flooded car, etc.)
-- MORE chaos/destruction than original
-- Topic-specific: ice storm→crashed trucks/black ice, floods→huge waves/cars floating, volcano→more lava, earthquake→collapsed buildings
-- ALWAYS include: motion blur, shaky hands, low resolution, grainy footage, compression artifacts, realistic raw cellphone video screenshot
-- NO text in the image
+IMAGEFX PROMPT STYLE (CRITICAL - REALISTIC FOOTAGE ONLY):
+
+LOCATION AWARENESS:
+- ALWAYS analyze the title for geographic locations (cities, countries, states, landmarks)
+- Include SPECIFIC location details: "downtown Miami streets", "Texas highway", "Japanese coastline", "California wildfire area", "New York residential area"
+- Use location-appropriate architecture, vegetation, weather patterns, and terrain
+- Include local emergency vehicles/uniforms if relevant
+
+REALISTIC CAPTURE QUALITY (MANDATORY):
+- CCTV security camera footage: grainy, fixed angle, timestamp overlay, compression artifacts, low resolution
+- Mobile phone capture: vertical orientation option, shaky hands, person running while filming, auto-focus hunting
+- Dashboard camera: wide angle lens distortion, date/time stamp, reflection on windshield
+- News helicopter footage: aerial view with zoom, slight motion blur, broadcast quality
+- Surveillance drone: overhead military/emergency perspective, high contrast
+- Body cam footage: first-person POV, badge/equipment visible in frame
+- Security footage: black and white or washed out colors, fish-eye lens distortion
+
+NEVER USE: cartoon style, 3D render, game graphics, anime, illustration, drawing, painting, digital art, CGI
+
+REALISM ENHANCERS:
+- Specific weather conditions matching the disaster type and location
+- Authentic emergency response vehicles and personnel  
+- Real architectural styles of the mentioned location
+- Actual terrain and vegetation of the geographic area
+- Authentic lighting conditions (time of day, weather-related lighting)
+- Motion blur, camera shake, compression artifacts, grain, poor lighting
+- Raw, unedited footage appearance
+
+PERSPECTIVE VARIETY:
+- Ground level: person filming while escaping, crowd POV, car dashboard view
+- Elevated: building security cam, helicopter news footage, drone surveillance  
+- Close-up: shaky phone footage of immediate danger, body cam perspective
+- Wide shot: CCTV overview of large area, traffic cam, weather cam perspective
+
+EXAMPLE LOCATION-AWARE PROMPTS:
+- Flood in Miami: "CCTV security camera footage of flooded downtown Miami streets with Art Deco buildings, palm trees bending in storm winds, cars floating past colorful storefronts, grainy timestamp overlay, compression artifacts"
+- Earthquake in California: "shaky cellphone video of California residential street during earthquake, Spanish tile roofs, palm trees swaying violently, cracks appearing in sidewalk, motion blur, vertical phone orientation"
+- Tornado in Texas: "dashboard camera wide angle view of massive tornado approaching flat Texas farmland, grain silos in background, pickup trucks fleeing on rural highway, date stamp visible, windshield reflection"
+
+TITLE GENERATION (80-100 characters):
+- LOCATION-FIRST when mentioned: "Miami Floods Trap Thousands" not "Floods in Miami Trap Thousands"
+- BE SPECIFIC: "Downtown Seattle" not just "Seattle", "Texas Highway 35" not just "Texas"
+- INCLUDE SCALE: "Massive", "Historic", "Unprecedented" when appropriate
+- NEWS-STYLE URGENCY: "Breaking", "Caught on Camera", "Never-Before-Seen"
+- REALISTIC IMPACT: Focus on actual consequences, not exaggerated claims
 
 CAPTION STYLE:
-- Mix of topic-specific (FROZEN CHAOS, COASTLINE CRUMBLING) and urgent news-style (NO ONE EXPECTED THIS, IT HAPPENED SO FAST, SITUATION CRITICAL)
+- LOCATION-SPECIFIC when possible: "MIAMI UNDERWATER", "TEXAS TORNADO", "JAPAN SHAKEN", "NYC BLACKOUT"  
+- DISASTER-SPECIFIC: "FROZEN CHAOS", "COASTLINE CRUMBLING", "GROUND SPLITTING", "WALLS OF WATER"
+- URGENT NEWS-STYLE: "NO ONE EXPECTED THIS", "IT HAPPENED SO FAST", "SITUATION CRITICAL", "CAUGHT ON CAMERA"
+- REALITY-BASED: "CCTV CAPTURES ALL", "PHONE FOOTAGE", "SECURITY CAM", "LIVE WITNESS", "RAW FOOTAGE"
+- Keep it authentic and news-appropriate, avoid sensational or clickbait language
 
 OUTPUT FORMAT - Use exactly this format:
 ---
@@ -385,9 +428,23 @@ OUTPUT FORMAT - Use exactly this format:
 
 ---"""
 
-        user_prompt = f"Analyze this YouTube thumbnail. Video title: \"{title}\""
+        user_prompt = f"""Analyze this YouTube thumbnail for disaster/news content.
+
+VIDEO TITLE: "{title}"
+
+ANALYSIS REQUIREMENTS:
+1. EXTRACT LOCATIONS: Identify any cities, countries, states, landmarks, or geographic areas mentioned in the title
+2. IDENTIFY DISASTER TYPE: Determine the specific type of disaster/event (flood, earthquake, fire, storm, etc.)
+3. CONTEXT UNDERSTANDING: Consider what the video is likely showing based on the title
+
+LOCATION-SPECIFIC DETAILS TO INCLUDE:
+- If location mentioned: Use authentic geographic features, architecture, local emergency services
+- If no location: Use generic but realistic settings appropriate for the disaster type
+- Consider climate and terrain of the mentioned area
+- Include region-appropriate vehicles, buildings, and landscape features"""
+        
         if extra_instructions:
-            user_prompt += f"\n\nExtra instructions: {extra_instructions}"
+            user_prompt += f"\n\nADDITIONAL INSTRUCTIONS: {extra_instructions}"
         
         # Handle regeneration of specific sections
         if regenerate_only == 'prompts':
