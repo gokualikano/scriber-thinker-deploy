@@ -127,10 +127,12 @@ def get_thumbnail():
             "--dump-json", 
             "--skip-download",
             "--no-check-certificate",
-            "--user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+            "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "--extractor-retries", "3",
+            "--sleep-interval", "1",
             url
         ]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=45)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
         if result.returncode != 0:
             print(f"yt-dlp error: {result.stderr}")
             return jsonify({"error": f"Failed to fetch video info: {result.stderr[:200]}"}), 400
