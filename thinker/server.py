@@ -128,14 +128,59 @@ def get_thumbnail():
             "--skip-download",
             "--no-check-certificate",
             "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "--extractor-retries", "3",
-            "--sleep-interval", "1",
+            "--extractor-retries", "5",
+            "--fragment-retries", "5", 
+            "--retry-sleep", "linear=2:5:1",
+            "--sleep-interval", "2",
+            "--sleep-subtitles", "2",
+            "--add-header", "Accept-Language:en-US,en;q=0.9",
+            "--add-header", "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             url
         ]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        
+        # If main method fails, try fallback with simpler extraction
         if result.returncode != 0:
-            print(f"yt-dlp error: {result.stderr}")
-            return jsonify({"error": f"Failed to fetch video info: {result.stderr[:200]}"}), 400
+            print(f"yt-dlp primary method failed: {result.stderr}")
+            print("Trying fallback method...")
+            
+            # Fallback: simpler extraction
+            fallback_cmd = [
+                "yt-dlp", 
+                "--dump-json", 
+                "--skip-download",
+                "--no-check-certificate",
+                "--user-agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+                "--extractor-retries", "1",
+                "--no-call-home",
+                url
+            ]
+            
+            fallback_result = subprocess.run(fallback_cmd, capture_output=True, text=True, timeout=60)
+            
+            if fallback_result.returncode != 0:
+                print(f"yt-dlp fallback also failed: {fallback_result.stderr}")
+                print("Using manual fallback with basic video info...")
+                
+                # Last resort: return basic info using video ID
+                thumbnail_url = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
+                try:
+                    import urllib.request
+                    urllib.request.urlopen(thumbnail_url, timeout=5)
+                except:
+                    thumbnail_url = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
+                
+                return jsonify({
+                    "video_id": video_id,
+                    "title": f"YouTube Video {video_id}",
+                    "description": "Video info extraction failed, but thumbnail analysis can proceed.",
+                    "thumbnail_url": thumbnail_url,
+                    "duration": "Unknown",
+                    "view_count": "Unknown"
+                })
+            else:
+                result = fallback_result
+                print("Fallback method succeeded")
         
         info = json.loads(result.stdout)
         

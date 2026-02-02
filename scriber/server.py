@@ -130,11 +130,32 @@ def analyze_video():
             "--sleep-interval", "1",
             url
         ]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
         if result.returncode != 0:
             error_msg = result.stderr[:500] if result.stderr else "Failed to fetch video info"
-            print(f"yt-dlp error: {error_msg}")
-            return jsonify({"error": f"Failed to fetch video info: {error_msg}"}), 400
+            print(f"yt-dlp primary method failed: {error_msg}")
+            print("Trying fallback method for Scriber...")
+            
+            # Fallback: simpler extraction with different user agent
+            fallback_cmd = [
+                "yt-dlp", 
+                "--dump-json", 
+                "--skip-download",
+                "--no-check-certificate",
+                "--user-agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+                "--extractor-retries", "1",
+                "--no-call-home",
+                url
+            ]
+            
+            fallback_result = subprocess.run(fallback_cmd, capture_output=True, text=True, timeout=60)
+            
+            if fallback_result.returncode != 0:
+                print(f"yt-dlp fallback also failed: {fallback_result.stderr}")
+                return jsonify({"error": f"Failed to fetch video info after multiple attempts: {error_msg}"}), 400
+            else:
+                result = fallback_result
+                print("Scriber fallback method succeeded")
         
         info = json.loads(result.stdout)
         
