@@ -120,10 +120,21 @@ def analyze_video():
     
     try:
         # Get video info including description and tags
-        cmd = ["yt-dlp", "--dump-json", "--skip-download", url]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        cmd = [
+            "yt-dlp", 
+            "--dump-json", 
+            "--skip-download",
+            "--no-check-certificate",
+            "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "--extractor-retries", "3",
+            "--sleep-interval", "1",
+            url
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
         if result.returncode != 0:
-            return jsonify({"error": "Failed to fetch video info"}), 400
+            error_msg = result.stderr[:500] if result.stderr else "Failed to fetch video info"
+            print(f"yt-dlp error: {error_msg}")
+            return jsonify({"error": f"Failed to fetch video info: {error_msg}"}), 400
         
         info = json.loads(result.stdout)
         
@@ -140,9 +151,13 @@ def analyze_video():
                     "--sub-langs", "en.*,en",
                     "--sub-format", "vtt",
                     "--output", f"{tmpdir}/%(id)s",
+                    "--no-check-certificate",
+                    "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                    "--extractor-retries", "3",
+                    "--sleep-interval", "1",
                     url
                 ]
-                subprocess.run(sub_cmd, capture_output=True, text=True, timeout=60)
+                subprocess.run(sub_cmd, capture_output=True, text=True, timeout=90)
                 
                 # Find and parse VTT file
                 vtt_files = list(Path(tmpdir).glob("*.vtt"))
